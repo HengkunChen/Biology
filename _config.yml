@@ -1,5 +1,3 @@
-url: "https://hengkunchen.github.io"
-baseurl: "/Biology"
 # ============================================================
 #  SITE SETTINGS  (edit freely)
 # ============================================================
@@ -12,8 +10,8 @@ email: you@example.com
 # After you create your GitHub repo, set these:
 #   Repo named USERNAME.github.io  ->  url: "https://USERNAME.github.io", baseurl: ""
 #   Repo named anything else       ->  url: "https://USERNAME.github.io", baseurl: "/repo-name"
-url: ""
-baseurl: ""
+url: "https://hengkunchen.github.io"
+baseurl: "/Biology"
 
 # Optional footer links (leave blank to hide)
 github_username: ""
