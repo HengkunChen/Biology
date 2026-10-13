@@ -1,0 +1,41 @@
+/* ============================================================
+   DESIGN TOKENS: change these to restyle the whole site.
+   Colours, fonts and widths are defined once here and used everywhere else.
+   ============================================================ */
+
+:root {
+  /* Colours (light) */
+  --bg: #fbfaf7;
+  --surface: #ffffff;
+  --fg: #1d2420;
+  --muted: #667069;
+  --accent: #1f6b52;
+  --rule: #e3e0d8;
+  --tag-bg: #e9f1ed;
+  --code-bg: #f1efe9;
+
+  /* Typography */
+  --font-body: Georgia, "Iowan Old Style", "Times New Roman", serif;
+  --font-ui: system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: ui-monospace, "SF Mono", Menlo, monospace;
+  --base-size: 18px;
+  --line-height: 1.65;
+
+  /* Layout */
+  --measure: 44rem;     /* maximum content width */
+  --gutter: 1.25rem;    /* side padding */
+  --radius: 6px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #14181a;
+    --surface: #1a2023;
+    --fg: #e6e8e4;
+    --muted: #96a09a;
+    --accent: #6fc4a2;
+    --rule: #2a3033;
+    --tag-bg: #1e2a26;
+    --code-bg: #1b2023;
+  }
+}

@@ -1,0 +1,9 @@
+<footer class="site-footer">
+  <div class="wrap">
+    <span>&copy; {{ 'now' | date: '%Y' }} {{ site.author }}</span>
+    {% if site.github_username != "" %}<a href="https://github.com/{{ site.github_username }}">GitHub</a>{% endif %}
+    {% if site.orcid != "" %}<a href="https://orcid.org/{{ site.orcid }}">ORCID</a>{% endif %}
+    {% if site.linkedin_url != "" %}<a href="{{ site.linkedin_url }}">LinkedIn</a>{% endif %}
+    <a href="{{ '/feed.xml' | relative_url }}">Blog RSS</a>
+  </div>
+</footer>

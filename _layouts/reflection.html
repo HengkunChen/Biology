@@ -1,0 +1,39 @@
+---
+layout: default
+---
+{% assign this_lab = site.data.labs | where: "id", page.lab | first %}
+<article class="post">
+  <header class="post-header">
+    <p class="eyebrow">
+      <a href="{{ '/reflections/' | relative_url }}#{{ page.lab }}">Reflections{% if this_lab %} &rsaquo; {{ this_lab.name }}{% endif %}</a>
+      {% if page.week %}&middot; Week {{ page.week }}{% endif %}
+    </p>
+    <h1>{{ page.title }}</h1>
+    <p class="meta">
+      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%-d %B %Y" }}</time>
+      {% if page.tags and page.tags.size > 0 %}
+        <span class="dot">&middot;</span>
+        {% for tag in page.tags %}<span class="tag">{{ tag }}</span>{% endfor %}
+      {% endif %}
+    </p>
+  </header>
+
+  <div class="prose">
+    {{ content }}
+  </div>
+</article>
+
+{% comment %} Previous / next entry within the same lab, in date order {% endcomment %}
+{% assign siblings = site.reflections | where: "lab", page.lab | sort: "date" %}
+{% assign prev_entry = nil %}
+{% assign next_entry = nil %}
+{% for s in siblings %}
+  {% if s.url == page.url %}
+    {% unless forloop.first %}{% assign pi = forloop.index0 | minus: 1 %}{% assign prev_entry = siblings[pi] %}{% endunless %}
+    {% unless forloop.last %}{% assign ni = forloop.index0 | plus: 1 %}{% assign next_entry = siblings[ni] %}{% endunless %}
+  {% endif %}
+{% endfor %}
+<nav class="post-nav" aria-label="More reflections">
+  {% if prev_entry %}<a class="prev" href="{{ prev_entry.url | relative_url }}">&larr; {{ prev_entry.title }}</a>{% endif %}
+  {% if next_entry %}<a class="next" href="{{ next_entry.url | relative_url }}">{{ next_entry.title }} &rarr;</a>{% endif %}
+</nav>

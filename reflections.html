@@ -1,0 +1,31 @@
+---
+layout: page
+title: Weekly reflections
+permalink: /reflections/
+lead: "A weekly log of what I studied, what clicked, and what didn't, grouped by the lab I was working in."
+---
+{% if site.data.labs.size > 1 %}
+<p class="toolbar">
+  <button type="button" data-expand-all>Expand all</button>
+  <button type="button" data-collapse-all>Collapse all</button>
+</p>
+{% endif %}
+
+{% for lab in site.data.labs %}
+{% include lab-card.html lab=lab %}
+{% endfor %}
+
+<script>
+  /* Optional niceties: expand/collapse buttons, and open the lab named in the URL (#lab-id). */
+  (function () {
+    var labs = document.querySelectorAll("details.lab");
+    var open = document.querySelector("[data-expand-all]");
+    var close = document.querySelector("[data-collapse-all]");
+    if (open) open.addEventListener("click", function () { labs.forEach(function (d) { d.open = true; }); });
+    if (close) close.addEventListener("click", function () { labs.forEach(function (d) { d.open = false; }); });
+    if (location.hash) {
+      var target = document.getElementById(location.hash.slice(1));
+      if (target && target.tagName === "DETAILS") { target.open = true; }
+    }
+  })();
+</script>

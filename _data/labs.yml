@@ -1,0 +1,46 @@
+# ============================================================
+#  LABS  -  one block per lab you have worked in.
+#  Newest lab first. Each reflection links to a lab through its `id`.
+#
+#  To add a lab:
+#    1. Copy a block below and give it a new, unique `id` (lowercase, no spaces).
+#    2. Set `current: false` on the one you're leaving (and fill in `end`).
+#    3. In each new reflection, set  lab: <that id>
+#       (optional: keep entries tidy by saving them in _reflections/<id>/)
+# ============================================================
+
+- id: wu-geng-lab
+  name: "Geng Wu Lab"
+  pi: "Prof. Geng Wu"
+  institution: "School of Life Sciences and Biotechnology, Shanghai Jiao Tong University"
+  location: "Shanghai, China"
+  start: "TBD"          # e.g. "Sep 2026"
+  end: ""               # leave blank while current
+  current: true         # true = shown as "present" and opened by default
+  url: "https://life.sjtu.edu.cn/teacher/En/GengWu"
+  focus:
+    - Structural biology
+    - mTORC1 signalling
+    - Hippo / Wnt / Hedgehog pathways
+    - Bacterial DNA defence
+  description: >
+    A group in the School of Life Sciences and Biotechnology at Shanghai Jiao Tong
+    University, led by Prof. Geng Wu. The lab's published work centres on the
+    structures and regulation of protein complexes in cell-signalling pathways
+    (mTORC1, Hippo, Wnt and Hedgehog) and in bacterial DNA-modification and
+    anti-phage defence systems, with a longer-term interest in intracellular
+    protein and short-DNA anticancer therapeutics.
+
+# --- Example of a past lab (delete the leading # to use it) ---
+# - id: example-previous-lab
+#   name: "Example Lab"
+#   pi: "Prof. Jane Doe"
+#   institution: "Example University"
+#   location: "City, Country"
+#   start: "Jan 2026"
+#   end: "Aug 2026"
+#   current: false
+#   url: ""
+#   focus: [Topic one, Topic two]
+#   description: >
+#     Two or three sentences on what the lab studies and what you did there.

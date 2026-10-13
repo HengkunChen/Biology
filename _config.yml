@@ -1,0 +1,64 @@
+# ============================================================
+#  SITE SETTINGS  (edit freely)
+# ============================================================
+title: Molecular Biology Notebook
+tagline: Weekly reflections, research notes and longer essays on molecular biology.
+description: A public log of what I'm learning in molecular biology, organised by the lab I'm working in.
+author: Your Name
+email: you@example.com
+
+# After you create your GitHub repo, set these:
+#   Repo named USERNAME.github.io  ->  url: "https://USERNAME.github.io", baseurl: ""
+#   Repo named anything else       ->  url: "https://USERNAME.github.io", baseurl: "/repo-name"
+url: ""
+baseurl: ""
+
+# Optional footer links (leave blank to hide)
+github_username: ""
+orcid: ""
+linkedin_url: ""
+
+# Reflections page: order of entries inside each lab.
+#   newest_first  or  oldest_first
+reflection_order: newest_first
+
+# How many recent items the home page shows in each list
+home_latest_count: 3
+
+# ============================================================
+#  STRUCTURE  (change with care; see README.md)
+# ============================================================
+markdown: kramdown
+timezone: Asia/Shanghai
+
+# Blog posts (the _posts folder) live under /blog/
+permalink: /blog/:year/:month/:title/
+
+# Weekly reflections are a separate collection (the _reflections folder)
+collections:
+  reflections:
+    output: true
+    permalink: /reflections/:path/
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+      type: "reflections"
+    values:
+      layout: "reflection"
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - templates
+  - vendor

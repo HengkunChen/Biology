@@ -1,0 +1,17 @@
+# ============================================================
+#  NAVIGATION + HOME PAGE CARDS
+#  One list drives both the top menu and the three cards on the home page.
+#  Reorder, rename or add items here. `url` must match a page's permalink.
+# ============================================================
+
+- title: About
+  url: /about/
+  description: Who I am, what I'm interested in, and my research timeline.
+
+- title: Reflections
+  url: /reflections/
+  description: Weekly notes on what I'm learning, grouped by the lab I'm in.
+
+- title: Blog
+  url: /blog/
+  description: Longer essays, open questions and ideas that outgrow a weekly note.

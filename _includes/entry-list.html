@@ -1,0 +1,17 @@
+{% comment %}
+  List of weekly reflections.
+  Pass the reflections to show as the "entries" parameter.
+{% endcomment %}
+{% if include.entries.size > 0 %}
+<ul class="entry-list">
+  {% for e in include.entries %}
+  <li>
+    <p class="eyebrow">{% if e.week %}Week {{ e.week }} &middot; {% endif %}{{ e.date | date: "%-d %b %Y" }}</p>
+    <a class="entry-title" href="{{ e.url | relative_url }}">{{ e.title }}</a>
+    {% if e.summary %}<p class="excerpt">{{ e.summary }}</p>{% endif %}
+  </li>
+  {% endfor %}
+</ul>
+{% else %}
+<p class="empty">No entries yet.</p>
+{% endif %}

@@ -1,0 +1,25 @@
+# ============================================================
+#  RESEARCH TIMELINE  -  shown on the About page. Newest first.
+#
+#  Fields:
+#    period       text shown as the date, e.g. "Sep 2026 - present"
+#    title        what you did / where
+#    place        institution or lab (optional)
+#    type         lab | education | project | course | other   (changes the dot colour)
+#    description  one or two sentences; Markdown allowed (optional)
+#    lab          a lab `id` from labs.yml; adds a link to that lab's reflections (optional)
+# ============================================================
+
+- period: "TBD - present"
+  title: "Research in the Geng Wu Lab"
+  place: "School of Life Sciences and Biotechnology, Shanghai Jiao Tong University"
+  type: lab
+  lab: wu-geng-lab
+  description: "Replace this with your project and what you are learning here."
+
+# REPLACE this placeholder with your real education, or delete it.
+- period: "20XX - 20XX"
+  title: "[Your degree / programme]"
+  place: "[Your university]"
+  type: education
+  description: "Add coursework or projects relevant to molecular biology."

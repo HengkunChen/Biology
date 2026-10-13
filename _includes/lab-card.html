@@ -1,0 +1,23 @@
+{% comment %}
+  One lab as a collapsible block: description first, then its weekly reflections.
+  Pass one entry of _data/labs.yml as the "lab" parameter.
+{% endcomment %}
+{% assign lab = include.lab %}
+{% assign lab_entries = site.reflections | where: "lab", lab.id | sort: "date" %}
+{% unless site.reflection_order == "oldest_first" %}{% assign lab_entries = lab_entries | reverse %}{% endunless %}
+<details class="lab" id="{{ lab.id }}"{% if lab.current %} open{% endif %}>
+  <summary>
+    <span class="lab-name">{{ lab.name }}</span>
+    <span class="lab-meta">{{ lab.start }} &ndash; {% if lab.current %}present{% else %}{{ lab.end }}{% endif %} &middot; {{ lab_entries.size }} {% if lab_entries.size == 1 %}entry{% else %}entries{% endif %}</span>
+  </summary>
+  <div class="lab-body">
+    <p class="lab-pi">
+      {% if lab.url and lab.url != "" %}<a href="{{ lab.url }}">{{ lab.pi }}</a>{% else %}{{ lab.pi }}{% endif %}
+      &middot; {{ lab.institution }}{% if lab.location %}, {{ lab.location }}{% endif %}
+    </p>
+    {% if lab.description %}<div class="lab-desc">{{ lab.description | markdownify }}</div>{% endif %}
+    {% if lab.focus %}<p class="lab-focus">{% for t in lab.focus %}<span class="tag">{{ t }}</span>{% endfor %}</p>{% endif %}
+    <h3 class="lab-entries-title">Weekly reflections</h3>
+    {% include entry-list.html entries=lab_entries %}
+  </div>
+</details>

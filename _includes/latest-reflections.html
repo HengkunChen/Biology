@@ -1,0 +1,17 @@
+{% assign latest_refl = site.reflections | sort: "date" | reverse | slice: 0, site.home_latest_count %}
+{% if latest_refl.size > 0 %}
+<section class="home-section">
+  <h2>Latest reflections</h2>
+  <ul class="entry-list">
+    {% for e in latest_refl %}
+    {% assign e_lab = site.data.labs | where: "id", e.lab | first %}
+    <li>
+      <p class="eyebrow">{% if e.week %}Week {{ e.week }} &middot; {% endif %}{% if e_lab %}{{ e_lab.name }} &middot; {% endif %}{{ e.date | date: "%-d %b %Y" }}</p>
+      <a class="entry-title" href="{{ e.url | relative_url }}">{{ e.title }}</a>
+      {% if e.summary %}<p class="excerpt">{{ e.summary }}</p>{% endif %}
+    </li>
+    {% endfor %}
+  </ul>
+  <p class="more"><a href="{{ '/reflections/' | relative_url }}">All reflections &rarr;</a></p>
+</section>
+{% endif %}

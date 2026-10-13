@@ -1,0 +1,14 @@
+{% comment %} Research timeline, fed by _data/timeline.yml {% endcomment %}
+{% if site.data.timeline.size > 0 %}
+<ol class="timeline">
+  {% for item in site.data.timeline %}
+  <li class="timeline-item type-{% if item.type %}{{ item.type }}{% else %}other{% endif %}">
+    <p class="timeline-period">{{ item.period }}</p>
+    <h3 class="timeline-title">{{ item.title }}</h3>
+    {% if item.place %}<p class="timeline-place">{{ item.place }}</p>{% endif %}
+    {% if item.description %}<div class="timeline-desc">{{ item.description | markdownify }}</div>{% endif %}
+    {% if item.lab %}<p class="timeline-link"><a href="{{ '/reflections/' | relative_url }}#{{ item.lab }}">Weekly reflections from this lab &rarr;</a></p>{% endif %}
+  </li>
+  {% endfor %}
+</ol>
+{% endif %}

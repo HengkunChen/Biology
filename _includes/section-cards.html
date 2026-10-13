@@ -1,0 +1,9 @@
+{% comment %} Cards for each section, fed by _data/nav.yml {% endcomment %}
+<div class="cards">
+  {% for item in site.data.nav %}
+  <a class="card" href="{{ item.url | relative_url }}">
+    <span class="card-title">{{ item.title }}</span>
+    <span class="card-desc">{{ item.description }}</span>
+  </a>
+  {% endfor %}
+</div>

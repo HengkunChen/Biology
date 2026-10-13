@@ -1,0 +1,8 @@
+{% assign latest_posts = site.posts | slice: 0, site.home_latest_count %}
+{% if latest_posts.size > 0 %}
+<section class="home-section">
+  <h2>From the blog</h2>
+  {% include post-list.html posts=latest_posts %}
+  <p class="more"><a href="{{ '/blog/' | relative_url }}">All posts &rarr;</a></p>
+</section>
+{% endif %}
