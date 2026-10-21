@@ -3,7 +3,7 @@
   Pass one entry of _data/labs.yml as the "lab" parameter.
 {% endcomment %}
 {% assign lab = include.lab %}
-{% assign lab_entries = site.reflections | where: "lab", lab.id | sort: "date" %}
+{% assign lab_entries = site.reflections | where: "lab", lab.id | sort: "week" %}
 {% unless site.reflection_order == "oldest_first" %}{% assign lab_entries = lab_entries | reverse %}{% endunless %}
 <details class="lab" id="{{ lab.id }}"{% if lab.current %} open{% endif %}>
   <summary>
